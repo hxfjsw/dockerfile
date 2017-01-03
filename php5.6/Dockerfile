@@ -33,7 +33,9 @@ RUN \
 		php-pecl-amqp --nogpgcheck \
         php-pecl-redis --nogpgcheck  \
         php-pecl-mongodb --nogpgcheck \
-        php-pecl-swoole --nogpgcheck
+        php-pecl-swoole --nogpgcheck\
+        php-gd \
+        php-pecl-pthreads
 
 
 #
