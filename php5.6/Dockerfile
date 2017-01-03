@@ -10,7 +10,7 @@ FROM leztech/dev
 #RUN sed -i s/"enabled=1"/"enabled=0"/g  /etc/yum/pluginconf.d/fastestmirror.conf
 #RUN sed -i s/"enabled=1"/"enabled=0"/g  /etc/yum/pluginconf.d/ovl.conf
 
-RUN sed -i s/"#include_only=.nl,.de,.uk,.ie"/"include_only=.cn,.com"/g  /etc/yum/pluginconf.d/fastestmirror.conf
+RUN sed -i s/"#include_only=.nl,.de,.uk,.ie"/"include_only=.hk,.cn,.com"/g  /etc/yum/pluginconf.d/fastestmirror.conf
 RUN rpm --import http://rpms.famillecollet.com/RPM-GPG-KEY-remi && rpm -ivh http://rpms.famillecollet.com/enterprise/remi-release-7.rpm &&  yum-config-manager --enable remi-php56
 RUN \
 	yum -y install \
@@ -35,7 +35,6 @@ RUN \
         php-pecl-mongodb --nogpgcheck \
         php-pecl-swoole --nogpgcheck\
         php-gd \
-        php-pecl-pthreads \
         && yum clean all
 
 
